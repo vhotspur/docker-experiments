@@ -9,7 +9,7 @@ RUN dnf install -y ca-certificates git \
     && tar -xz -C /opt -f "/tmp/jdk-10.0.2.tar.gz" \
     && rm -f "/tmp/jdk-10.0.2.tar.gz" \
     && printf 'export JAVA_HOME="%s"\nexport PATH="$JAVA_HOME/bin:$PATH"\n' "/opt/jdk-10.0.2" >/etc/profile.d/java_from_opt.sh \
-    && ln -sf /etc/pki/java/cacerts /opt/jdk-9/lib/security/ \
+    && ln -sf /etc/pki/java/cacerts /opt/jdk-10.0.2/lib/security/ \
     && /opt/jdk-10.0.2/bin/java -version
 
 

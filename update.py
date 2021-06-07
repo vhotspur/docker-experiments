@@ -45,7 +45,7 @@ RUN dnf install -y ca-certificates git \\
     && tar -xz -C /opt -f "/tmp/{tarball_basename}.tar.gz" \\
     && rm -f "/tmp/{tarball_basename}.tar.gz" \\
     && printf 'export JAVA_HOME="%s"\\nexport PATH="$JAVA_HOME/bin:$PATH"\\n' "/opt/{tarball_basedir}" >/etc/profile.d/java_from_opt.sh \\
-    && ln -sf /etc/pki/java/cacerts /opt/jdk-9/lib/security/ \\
+    && ln -sf /etc/pki/java/cacerts /opt/{tarball_basedir}/lib/security/ \\
     && /opt/{tarball_basedir}/bin/java -version
 
 
